@@ -6,15 +6,18 @@ import java.io.IOException;
 
 public class Main {
 
-    // TODO: add classes to translate BF derivatives to work with Parser class
+    // configure for desired file type
 
-    // configure for desired file and lexer type
-    public static void main(String[] args) {
-        BFLexer lex = new BFLexer("code.txt");  // pass file path in string form
-        try {
-            Parser p = new Parser(lex); // pass lexer type (Brainfuck in this case)
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public enum CodeType {
+        BF, Ook, TrollScript
+    }
+
+    public static void main(String[] args) throws IOException {
+        FileHandler BFHandler = new FileHandler("BFHelloWorld.txt", CodeType.BF.name()); // pass file path and code type
+        FileHandler OokHandler = new FileHandler("OokHelloWorld.txt", CodeType.Ook.name());
+        FileHandler TrollScriptHandler = new FileHandler("TrollFibonacci.txt", CodeType.TrollScript.name());
+        BFLexer lex = new BFLexer(TrollScriptHandler); // pass desired file handler
+        Parser p = new Parser(lex); // pass lexer
+        p.parse();
     }
 }
