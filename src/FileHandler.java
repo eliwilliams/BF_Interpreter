@@ -107,7 +107,7 @@ public class FileHandler {
         if (s.equals(TrollScriptTokens.END_LOOP))
             return Token.END_LOOP;
         else {
-            System.out.println("Encountered unexpected token." + s);
+            System.out.println("Encountered unexpected token: " + s);
             return ' ';
         }
     }
