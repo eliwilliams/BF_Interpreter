@@ -67,6 +67,9 @@ public class FileHandler {
     }
 
     public char matchOokToken(String s) {
+
+        // TODO: change to switch statement
+
         if (s.equals(OokTokens.INCREMENT))
             return Token.INCREMENT;
         if (s.equals(OokTokens.DECREMENT))
@@ -90,6 +93,9 @@ public class FileHandler {
     }
 
     public char matchTrollScriptToken(String s) {
+
+        // TODO: change to switch statement
+
         if (s.equals(TrollScriptTokens.INCREMENT))
             return Token.INCREMENT;
         if (s.equals(TrollScriptTokens.DECREMENT))
